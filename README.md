@@ -11,4 +11,4 @@ This code is licensed under:
 - MIT License ([LICENSE-MIT](LICENSE-MIT))
 - Apache License 2.0 ([LICENSE-APACHE](LICENSE-APACHE))
 
-Use it freely, modify it, learn from it, and contribute!
+Use it freely, modify it, and most importantly learn from it 

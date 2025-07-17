@@ -5,6 +5,8 @@ fn main() {
 
     println!(
         "cargo:rustc-link-arg-bins=--script={}",
-        local_path.join("linker_script.ld").display()
+        local_path
+            .join("../../../build/linker_scripts/16bit.ld")
+            .display()
     )
 }

@@ -1,12 +1,11 @@
-[package]
-name = "LearnixOS-Book-Walkthrough"
-version = "0.1.0"
-edition = "2024"
-
-[dependencies]
-
-[profile.dev]
-panic = "abort"
+[workspace]
+members = ["kernel/stages/first_stage", "shared/common"]
+resolver = "3"
 
 [profile.release]
+opt-level = 's'
+overflow-checks = false
+panic = "abort"
+
+[profile.dev]
 panic = "abort"

@@ -1,5 +1,5 @@
 OUTPUT_FORMAT(binary)
-ENTRY(main)
+ENTRY(start)
 
 SECTIONS {
 

@@ -37,3 +37,12 @@ enable_a20:
     and al, 0xFE
     out 0x92, al
 enable_a20_after:
+
+check_int13h_extensions:
+    mov ah, 0x41
+    mov bx, 0x55aa
+    # dl contains drive number
+    int 0x13
+    jnc .int13_pass
+    hlt
+.int13_pass:

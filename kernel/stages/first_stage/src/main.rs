@@ -1,10 +1,14 @@
 #![no_std]
 #![no_main]
 
-use core::{arch::asm, panic::PanicInfo};
+use core::{
+    arch::{asm, global_asm},
+    panic::PanicInfo,
+};
+global_asm!(include_str!("../asm/boot.s"));
 
 #[unsafe(no_mangle)]
-fn main() {
+fn first_stage() {
     let msg = b"Hello, World!";
     for &ch in msg {
         unsafe {

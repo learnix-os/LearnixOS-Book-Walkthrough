@@ -4,7 +4,8 @@ ENTRY(main)
 SECTIONS {
 
     . = 0x7c00;
-
+        
+    .boot : { *(.boot) }
     .text : { *(.text .text.*) }
     .bss : { *(.bss .bss.*) }
     .rodata : { *(.rodata .rodata.*) }

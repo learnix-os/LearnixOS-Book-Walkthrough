@@ -20,3 +20,20 @@ start:
 
     # initialize stack
     mov sp, 0x7c00
+
+# Enable the A20 line via I/O Port 0x92
+# This method might not work on all motherboards
+# Use with care!
+enable_a20:
+    # Check if a20 is already enabled
+    in al, 0x92
+    test al, 2
+
+    # If so, skip the enabling code
+    jnz enable_a20_after
+    
+    # Else, enable the a20 line
+    or al, 2
+    and al, 0xFE
+    out 0x92, al
+enable_a20_after:

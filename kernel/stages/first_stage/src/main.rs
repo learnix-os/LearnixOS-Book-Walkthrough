@@ -1,5 +1,6 @@
 #![no_std]
 #![no_main]
+mod disk;
 
 use core::{
     arch::{asm, global_asm},
